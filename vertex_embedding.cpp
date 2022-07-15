@@ -6,15 +6,14 @@
 
 namespace BaseGraph { namespace Graphics {
 
-std::vector<Coordinates> embedOnCircle(const UndirectedGraph& graph, double radius) {
-    const auto& n = graph.getSize();
-    std::vector<Coordinates> vertexPositions(n);
+std::vector<Coordinates> embedOnCircle(size_t graphSize, double radius) {
+    std::vector<Coordinates> vertexPositions(graphSize);
 
     double angle;
-    for (auto vertex: graph) {
-        angle = ((double)vertex/n - .25) * 2*M_PI;
-        vertexPositions[vertex].x = radius*cos(angle);
-        vertexPositions[vertex].y = radius*sin(angle);
+    for (size_t i=0; i<graphSize; i++) {
+        angle = ((double)i/graphSize - .25) * 2*M_PI;
+        vertexPositions[i].x = radius*cos(angle);
+        vertexPositions[i].y = radius*sin(angle);
     }
     return vertexPositions;
 }

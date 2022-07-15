@@ -12,7 +12,7 @@ struct Coordinates {
     double y;
 };
 
-std::vector<Coordinates> embedOnCircle(const UndirectedGraph&, double radius=1);
+std::vector<Coordinates> embedOnCircle(size_t graphSize, double radius=1);
 
 
 }} // namespace BaseGraph::Graphics
