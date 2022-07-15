@@ -1,0 +1,3 @@
+add_library(BaseGraph_graphics svg.cpp vertex_embedding.cpp)
+target_link_libraries(BaseGraph_graphics BaseGraph_core)
+add_extension(BaseGraph_graphics)
