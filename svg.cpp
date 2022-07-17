@@ -44,7 +44,7 @@ static void _createSVG(const Graph& graph, const std::vector<Coordinates>& verte
     writeDefs(svgFile);
 
     for (auto i: graph)
-        for (auto j: graph.getOutEdgesOfIdx(i))
+        for (auto j: graph.getOutEdgesOf(i))
             if (directed or i<j)
                 writeEdge(svgFile, vertexPositions[i], vertexPositions[j], directed);
 

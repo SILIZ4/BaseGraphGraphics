@@ -3,7 +3,7 @@
 #include <random>
 #include "BaseGraph/undirectedgraph.h"
 #include "BaseGraph/extensions/random/rng.h"
-#include "vertex_embedding.h"
+#include "vertex_layouts.h"
 
 
 #define _USE_MATH_DEFINES
@@ -74,7 +74,7 @@ std::vector<Coordinates> findForceDirectedLayout(const UndirectedGraph& graph, s
             for (VertexIndex j=i+1; j!=n; j++)
                 applyForce(i, j, repel);
 
-            for (auto j: graph.getOutEdgesOfIdx(i))
+            for (auto j: graph.getOutEdgesOf(i))
                 if (i<=j)
                     applyForce(i, j, attract);
         }

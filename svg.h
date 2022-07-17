@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include "BaseGraph/undirectedgraph.h"
-#include "vertex_embedding.h"
+#include "vertex_layouts.h"
 
 
 namespace BaseGraph{ namespace graphics {
