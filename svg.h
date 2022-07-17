@@ -9,7 +9,7 @@
 #include "vertex_embedding.h"
 
 
-namespace BaseGraph{ namespace Graphics {
+namespace BaseGraph{ namespace graphics {
 
 typedef std::unordered_map<std::string, std::string> Style;
 
@@ -23,6 +23,6 @@ void createSVG(const DirectedGraph&, const std::vector<Coordinates>&, const std:
 void createSVG(const UndirectedGraph&, const std::vector<Coordinates>&, const std::string& fileName);
 
 
-}} // namespace BaseGraph::Graphics
+}} // namespace BaseGraph::graphics
 
 #endif

@@ -5,7 +5,7 @@
 #include <math.h>
 
 
-namespace BaseGraph { namespace Graphics {
+namespace BaseGraph { namespace graphics {
 
 inline std::string indent(int n) {
     return std::string(4*n, ' ');
@@ -181,4 +181,4 @@ static double getDoubleProperty(const std::unordered_map<std::string, std::strin
 }
 
 
-}} // namespace BaseGraph::Graphics
+}} // namespace BaseGraph::graphics

@@ -2,18 +2,18 @@
 #include <string>
 
 
-namespace BaseGraph { namespace Graphics {
+namespace BaseGraph { namespace graphics {
 
 std::unordered_map<std::string, std::string> vertexStyle {
     {"fill", "#e7e7e7"},
     {"stroke", "#333333"},
-    {"stroke-width", ".7"},
-    {"r", "3"},
+    {"stroke-width", ".005"},
+    {"r", "0.02"},
 };
 std::unordered_map<std::string, std::string> edgeStyle {
     {"fill", "none"},
     {"stroke", "#333333"},
-    {"stroke-width", "1"},
+    {"stroke-width", "0.008"},
 };
 std::unordered_map<std::string, std::string> directedEdgeMarkerStyle {
     {"viewBox", "0 0 5 5"},
@@ -26,4 +26,4 @@ std::unordered_map<std::string, std::string> directedEdgeMarkerStyle {
 std::string directedEdgeMarkerPath =
       "<path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"" + edgeStyle["stroke"] + "\"/>";
 
-}} // namespace BaseGraph::Graphics
+}} // namespace BaseGraph::graphics
