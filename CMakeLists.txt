@@ -1,3 +1,4 @@
-add_library(BaseGraph_graphics svg.cpp vertex_layouts.cpp style.cpp)
-target_link_libraries(BaseGraph_graphics BaseGraph_core)
-add_extension(BaseGraph_graphics)
+set(EXTENSION_NAME graphics)
+add_library(${EXTENSION_NAME} svg.cpp vertex_layouts.cpp style.cpp)
+target_link_libraries(${EXTENSION_NAME} core)
+add_extension(${EXTENSION_NAME})
