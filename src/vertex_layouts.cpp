@@ -1,15 +1,18 @@
+#include "BaseGraph/extensions/graphics/vertex_layouts.h"
+
 #include <math.h>
 #include <functional>
 #include <random>
-#include "BaseGraph/undirectedgraph.h"
-#include "BaseGraph/extensions/random/rng.h"
-#include "vertex_layouts.h"
+
+#include <BaseGraph/undirectedgraph.h>
 
 
 #define _USE_MATH_DEFINES
 
 
 namespace BaseGraph { namespace graphics {
+
+static std::mt19937_64 rng;
 
 std::vector<Coordinates> findCircleLayout(size_t graphSize, double radius) {
     std::vector<Coordinates> vertexPositions(graphSize);
@@ -42,8 +45,8 @@ std::vector<Coordinates> findForceDirectedLayout(const UndirectedGraph& graph, s
 
     std::uniform_real_distribution<double> initialPositionDistribution(0, 1);
     for (auto& position: vertexPositions) {
-        position.x = initialPositionDistribution(BaseGraph::random::rng)*.25*width;
-        position.y = initialPositionDistribution(BaseGraph::random::rng)*.25*height;
+        position.x = initialPositionDistribution(rng)*.25*width;
+        position.y = initialPositionDistribution(rng)*.25*height;
     }
 
     auto attract = [&k] (double deltaNorm) {

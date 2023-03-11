@@ -1,8 +1,11 @@
-#include "svg.h"
-#include <stdexcept>
+#include "BaseGraph/extensions/graphics/svg.h"
+
 #include <array>
-#include <unordered_map>
 #include <math.h>
+#include <stdexcept>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 
 namespace BaseGraph { namespace graphics {
@@ -27,13 +30,13 @@ static void _createSVG(const Graph& graph, const std::vector<Coordinates>& verte
         throw std::logic_error("Cannot create SVG: graph has "+std::to_string(graph.getSize())+" vertices"
                 " while there are " + std::to_string(vertexPositions.size()) + " vertex positions.");
 
-
-    std::ofstream svgFile(fileName);
     if (graph.getSize() == 0)
         return;
 
-    auto corners = findTightViewBox(vertexPositions);
+    std::ofstream svgFile(fileName);
 
+    writeHeader(svgFile);
+    auto corners = findTightViewBox(vertexPositions);
     svgFile
         << "<svg xmlns=\"http://www.w3.org/2000/svg\""
             << " viewBox=\""

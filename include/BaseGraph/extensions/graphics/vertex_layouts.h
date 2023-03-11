@@ -2,7 +2,7 @@
 #define BASEGRAPH_EXTENSION_GRAPHICS_EMBEDDING_H
 
 #include <vector>
-#include "BaseGraph/undirectedgraph.h"
+#include <BaseGraph/undirectedgraph.h>
 #include <math.h>
 
 
@@ -10,8 +10,11 @@ namespace BaseGraph{ namespace graphics {
 
 
 struct Coordinates {
-    double x;
-    double y;
+    double x=0;
+    double y=0;
+
+    Coordinates() {}
+    Coordinates(double x, double y): x(x), y(y) {}
 
     double norm() const {
         return sqrt(x*x + y*y);
@@ -48,7 +51,7 @@ struct Coordinates {
 };
 
 std::vector<Coordinates> findCircleLayout(size_t graphSize, double radius=1);
-std::vector<Coordinates> findForceDirectedLayout(const UndirectedGraph& graph, size_t iterations=100, double k=-1, double width=1, double height=1);
+std::vector<Coordinates> findForceDirectedLayout(const UndirectedGraph& graph, size_t iterations=100, double k=-1, double width=10, double height=10);
 
 
 }} // namespace BaseGraph::graphics
